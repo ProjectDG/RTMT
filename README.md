@@ -1,2 +1,2 @@
 # Rocco's Tacos Menu test
-[click here for Training App](https://projectdg.github.io/RTMT/)
+[click here for Menu Test](https://projectdg.github.io/RTMT/)
