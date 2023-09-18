@@ -11,14 +11,17 @@ window.onload = function () {
        // In the array --> last digit gives the right answer position
         allQuestions = {
           'What type of tortilla is served with the De Casa tacos?' : ['Corn', 'Flour', 'Hard Corn', 1 , "false"],
+
+          'How are De Casa tacos garnished?' : ['Lettuce', 'Pico de Gallo', 'Cilantro', 'Pickled Jalapenos', 'Cotija Cheese', 'Pickled Red Onions', ['Cilantro', 'Cotija Cheese','Pickled Red Onions', 'Pico de Gallo'], "true"],     
+
+          
           
           'What type of tortilla is served with the De Calle tacos?' : ['Hard Corn', 'Corn', 'Flour', 1 , "false"],
 
-          'What\'s my mother fuckin\' name?' : ['Steve', 'Ian', 'Joe', ["Ian", "Steve"], "true"],
 
-          'What year is it?' : ['1985', '2016', '2023', 2 , "false"],
 
           // '' : ['', '', '', null, "true"],                      <-------------- Question Template
+          // 'What\'s my mother fuckin\' name?' : ['Steve', 'Ian', 'Joe', ["Ian", "Steve"], "true"],       <---------MSA Example
         };
         
     function loadQuestion(curr) {
@@ -38,7 +41,7 @@ window.onload = function () {
     // Every answer is added with an 'onclick'-function
     
       var answers = allQuestions[Object.keys(allQuestions)[curr]];
-      var answersMC = answers.slice()[4];
+      var answersMC = answers.slice()[7]; //                    <------------------------------this number may change so i need to make it standard.
 
       answerArea.innerHTML = '';
       
@@ -105,7 +108,8 @@ window.onload = function () {
           submitButton.setAttribute("onclick", "");
           submitButton.onclick = function msaFunction(a, b){
             var a = selectedAnswers.sort();
-            var b = Object.values(allQuestions)[curr][3];
+            var b = Object.values(allQuestions)[curr][6];//      <------------------------------this number may change so i need to make it standard.
+            b.sort();
 
             if(_.isEqual(a, b) === true){
               addChecker(true);      
@@ -129,7 +133,7 @@ window.onload = function () {
 
             console.log(current < Object.keys(allQuestions).length -1)
             console.log("Your Answer: " + a);
-            console.log("Correct Answer: " + b.sort());
+            console.log("Correct Answer: " + b);
             console.log("Submitted!!!")
           }
 
