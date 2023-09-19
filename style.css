@@ -1,129 +1,449 @@
-body, html {
-    background-color: black;
-    width: 100%;
-    height: 100%;
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  .wrapper {
-    width: 93vw;
-    margin: 0 auto;
-    height: 100%;
-    padding-top: 0px;
-  }
-  
-  #quiz {
-    background-color: #34495E;
-    width: 100%;
-    color: #fff;
-    text-align: center;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    height: 97vh;
-  }
-  
-  #quiz > h1 {
-    text-align: center;
-    font-size: 20px;
-    font-family: monospace;
-    margin-bottom: 1vh;
-  }
-  
-  .questions {
-    font-size: 30px;
-    font-weight: 700;
-    font-style: italic;
-    border-top: 1px solid #FFFFFF;
-    border-bottom: 1px solid #FFFFFF;
-    padding: 20px;
-    margin: 1vh 0 3vh 0;
-  }
-  
-  .answers div {
-    padding: 10px 0 0 0;
-    font-size: 20px;
-  }
-  
-  .answers div:hover {
-    cursor: pointer;
-    color: #FBCB43;
-  }
-  
-  .answers {
-    padding: 0px 0 10px 0px;
-  }
-  
-  .answers div {
-    width: 50%;
-    margin: 0 auto;
-    padding-bottom: 15px;
-    border-top: 1px solid grey;
-  }
-  
-  .answers div:first-child {
     border: none;
+    font-family: Arial, sans-serif;
+  }
+
+::-webkit-scrollbar {
+    display: none;
   }
   
-  .checker {
-    display: inline-block;
-    width: 200px;
-    margin: 0 auto;
+body {
+    font-size: 14px;
+    background-image: url("https://anyvoo.com/wp-content/uploads/2020/04/Old-School-Wood-Plank-Video-Conference-Background-Design-Full-Image-No-Logo.jpg");
   }
+
+  ::backdrop{
+    background-image: url("https://anyvoo.com/wp-content/uploads/2020/04/Old-School-Wood-Plank-Video-Conference-Background-Design-Full-Image-No-Logo.jpg");
+}
   
-  .correct, .false {
-    background-color: #109D59;
-    width: 60px;
-    height: 30px;
-    line-height: 30px;
-    padding-left: 4px;
-    float: left;
-    margin-left: 2px;
-    margin-top: 2px;
-  }
-  
-  .false {
-    background-color: #DC4437;
-  }
 
-hr{
-    width: 50%;
+
+@media screen and (orientation:portrait) {
+    *{
+        z-index: 2;
+        color: rgb(241, 237, 231);
+    }
+
+    .portraitButtons{
+        border: 4px outset rgb(122, 113, 113);
+        width: 50vw;
+        height: auto;
+        font-size: 2.75vh;
+        background-color: black;
+        color: white;
+        padding: 2vh 3vw;
+        display: block;
+        margin:  2vh auto;
+    }  
+
+    button, img, p, .grid-item{
+        display: none;
+    }
+
+    #portraitContainer{
+        margin: 10% 0;
+    }
+
+    h1{
+        display: grid;
+        justify-content: center;
+        margin: 5% 5%;
+        height: auto;
+        font-size: 3.7vh;
+        font-family: monospace;
+        -webkit-text-stroke: 2px black;
+    }
+
+    #rotateScreenIcon{
+        display: block;
+        margin: auto;
+        height: auto;
+    }
 }
 
-#correct{
-    float: left;
-    padding-left: 10%;
-}
+@media screen and (orientation:landscape) {
+    h1{
+        display: none;
+    }
 
-#incorrect{
-    float: right;
-    padding-right: 10%;
-}
+    .all-buttons{
+        margin: .5%;
+        width: 10.5vw;
+        height: 14vh;
+        padding: 1% 1.5%;
+        border-radius: 12.5%;
+        border: 4px inset rgb(14, 14, 14);
+        box-shadow: 1px 1px 5px rgb(88, 88, 88), 0 0 5px rgb(88, 88, 88), 0 0 5px rgb(88, 88, 88);
+        color: white;
+        background-color: rgb(39, 39, 39);
+        font-size: 2.1vh;
+        cursor: pointer;
+      }
 
-.input{
-    width: 25px;
-    height: 40px;
-}
+    .monthly-specials-buttons{
+        margin: 0;
+    }  
 
-#quiz > #progressBar{
-  border: 2px solid #FFFFFF;
-  width: 85%;
-  display: block;
-		position: fixed;
-  align-items: center;
-  height: auto;
-  padding: 2px;
-  margin: 29vh 0 2vh 0;
-		bottom: .5vh;
-	 left: 6.5vw;
-}
+    #gridContainer{
+        display: grid;
+        margin: .5% 2%;
+        justify-content: center;
+    }
 
-#progressBarColor{
-  background-color: grey;
-  height: 10px;
-  width: 10%;
-}
+    .grid-item {
+        background-color: rgba(0, 0, 0, 0.8);
+        text-align: center;
+        padding: 20px 20px 5px 20px;
+        font-size: 30px;
+        color: white;
+    }
 
-label{
-	margin: 15px;
+    .item1 {
+        grid-column: 1 / span 2;
+        grid-row: 1;
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    .nav-container{
+        display: grid;
+        grid-template-columns: auto auto auto auto auto auto;
+        justify-content: space-evenly;
+        align-content: center;
+    }
+
+    .nav-buttons{
+        position: relative;
+        border: 4px outset rgb(122, 113, 113);
+        margin: 0% 2% 0% 2%;
+        width: 14vw;
+        height: 10vh;
+        font-size: 2.75vh;
+        background-color: black;
+        color: white;
+        padding: 0 3vw;
+      }
+      
+      #navDessert{
+        position: relative;
+        border: 4px outset rgb(122, 113, 113);
+        margin: 0% 2% 0% 2%;
+        width: 12vw;
+        height: 10vh;
+        font-size: 2.75vh;
+        background-color: black;
+        color: white;
+      }
+
+    .nav-buttons:focus, .all-buttons, #instructionsButton{
+        outline: none;
+      }
+
+    .frozen-buttons, 
+    .specialty-buttons, 
+    .mocktail-buttons, 
+    .happyhour-buttons,
+    .monthly-specials-buttons,
+    .other-buttons,
+    .brunch-buttons,
+    .batch-buttons,
+    .sangria-buttons, 
+    .form-container, 
+    .results-container,
+    .tacotuesday-buttons, 
+    #rotateScreenIcon,
+    .portraitButtons{
+        display: none;
+    }  
+
+    .monthly-specials-buttons{
+        width: 11vw;
+        height: 11vh;
+    }
+
+    /* search container */
+    .form-container{
+        position: absolute;
+        margin: 2% auto;
+        width: 85%;
+    }
+
+    #search{
+        width: 50%;
+        height: auto;
+        padding: 1.5vh 10vw 1.5vh 1.5vw;
+        font-size: large;
+    }
+
+    #clear{
+        width: 10%;
+        height: auto;
+        padding: .75%;
+    }
+
+    /* button container */  
+    .item2 {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+        height: 60vh;
+        width: 85vw;
+        border: 4px outset rgb(122, 113, 113);
+        display: grid;
+        grid-template-columns: 33% auto auto;
+        justify-content: center;
+        align-content: center;
+        overflow: scroll;
+     }
+
+    .button-container, .results-list{
+        margin: auto;
+        height: 65vh;
+        width: 87vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        column-gap: 2.5vw;
+        row-gap: 5vh;
+        overflow: scroll;
+        grid-column: 1 / span 2;
+        grid-row: 2;
+    }
+    .results-list{
+        position: fixed;
+        top: 26%;
+        height: 50vh;;
+    }
+
+    .mocktail-buttons{
+        width: 12vw;
+        height: 18vh;
+        padding: 2% 1%;
+    }
+
+    .item3 {
+        display: none;
+        width: 80%;
+        height: 60%;
+        padding: 0%;
+        padding-top: 2%;
+        background-color: rgba(0, 0, 0, 0);
+        grid-column: 1 / span 1;
+        grid-row: 1;
+    }
+
+    #drinkPhoto{
+        background-color: black;
+        border: 4px inset rgb(122, 113, 113, .8);
+        max-width: 80%;
+        height: auto;
+        font-size: 2vh;
+      }
+
+    .drink-title{
+        display: none;
+        padding: 1vh;
+        font-size: 3vh;
+    }
+
+    #instructionsButton{
+        position: relative;
+        border: 4px outset rgb(122, 113, 113);
+        margin: 4% 2% 0% 2%;
+        width: 20vw;
+        height: 5vh;
+        font-size: 2vh;
+        background-color: black;
+        color: white;
+    }
+
+    .item4 {
+        display: none;
+        width: 100%;                             /*code for when pics are enabled*/
+        height: 65%;
+        padding-top: 3%;
+        padding-left: 0;
+        background-color: rgba(0, 0, 0, 0);
+        grid-column: 2 / span 2;
+        grid-row: 1;
+    }
+
+    .recipe-container{
+        display: grid;
+        grid-template-columns: auto; /*dont need the extra columns fix later*/
+        grid-template-rows: min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content;
+        column-gap: 2vw;
+        height: 100%;
+        font-size: 2.5vh;
+    }
+
+    #glass{
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: left;
+    }
+
+    #glassRecipe{
+        grid-column: 2 / span 2;
+        grid-row: 1;
+        justify-self: left;
+    }
+
+    #rim{
+        grid-column: 1;
+        grid-row: 2;
+        justify-self: left;
+    }
+
+    #rimRecipe{
+        grid-column: 2 / span 2;
+        grid-row: 2;
+        justify-self: left;
+    }
+
+    #liquor{
+        grid-column: 1;
+        grid-row: 3;
+        justify-self: left;
+    }
+
+    #liquorRecipe{
+        grid-column: 2 / span 2;
+        grid-row: 3;
+        justify-self: left;
+    }
+
+    #liquorRecipe2{
+        display: none;
+        grid-column: 2 / span 2;
+        grid-row: 4;
+        justify-self: left;
+    }
+
+    #liquorRecipe3{
+        display: none;
+        grid-column: 2 / span 2;
+        grid-row: 5;
+        justify-self: left;
+    }
+
+    #liquorRecipe4{
+        display: none;
+        grid-column: 2 / span 2;
+        grid-row: 6;
+        justify-self: left;
+    }
+
+    #liquorRecipe5{
+        display: none;
+        grid-column: 2 / span 2;
+        grid-row: 7;
+        justify-self: left;
+    }
+
+    #liqueur{
+        grid-column: 1;
+        grid-row: 8;
+        justify-self: left;
+    }
+
+    #liqueurRecipe{
+        grid-column: 2 / span 2;
+        grid-row: 8;
+        justify-self: left;
+    }
+
+    #liqueurRecipe2{
+        grid-column: 2 / span 2;
+        grid-row: 9;
+        justify-self: left;
+    }
+
+    #mixers{
+        grid-column: 1;
+        grid-row: 10;
+        justify-self: left;
+    }
+
+    #mixersRecipe{
+        grid-column: 2 / span 2;
+        grid-row: 10;
+        justify-self: left;
+    }
+
+    #mixersRecipe2{
+        display: none;
+        grid-column: 2 / span 2;
+        grid-row: 11;
+        justify-self: left;
+    }
+
+    #mixersRecipe3{
+        display: none;
+        grid-column: 2 / span 2;
+        grid-row: 12;
+        justify-self: left;
+    }
+
+    #mixersRecipe4{
+        display: none;
+        grid-column: 2 / span 2;
+        grid-row: 13;
+        justify-self: left;
+    }
+
+    #mixersRecipe5{
+        display: none;
+        grid-column: 2 / span 2;
+        grid-row: 14;
+        justify-self: left;
+    }
+
+    #garnish{
+        grid-column: 1;
+        grid-row: 15;
+        justify-self: left;
+    }
+
+    #garnishRecipe{
+        grid-column: 2 / span 2;
+        grid-row: 15;
+        justify-self: left;
+    }
+
+    #garnishRecipe2{
+        grid-column: 2 / span 2;
+        grid-row: 16;
+        justify-self: left;
+    }
+
+    #garnishRecipe3{
+        grid-column: 2 / span 2;
+        grid-row: 17;
+        justify-self: left;
+    }
+
+    #garnishRecipe4{
+        grid-column: 2 / span 2;
+        grid-row: 18;
+        justify-self: left;
+    }
+
+    .item5 {
+        padding: .25% 0 0 0;
+        grid-column: 1 / span 2;
+        grid-row: 4;
+        background-color: rgba(0, 0, 0, 0);
+        width: 100%;
+    }
+
+    #navBatch, #navBrunch, #navTacoTuesday, #navSangria{
+        margin: .25vh 0;
+        height: 10vh;
+        width: 21vw;
+        font-size: 3vh;
+        border-radius:  0;
+    }
+
 }
