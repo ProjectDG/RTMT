@@ -44,7 +44,15 @@
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
+
+      font-size: 14px;
+      background-image: url("https://anyvoo.com/wp-content/uploads/2020/04/Old-School-Wood-Plank-Video-Conference-Background-Design-Full-Image-No-Logo.jpg");
+    }
+  
+    ::backdrop{
+      background-image: url("https://anyvoo.com/wp-content/uploads/2020/04/Old-School-Wood-Plank-Video-Conference-Background-Design-Full-Image-No-Logo.jpg");
   }
+  
   
   .wrapper {
     width: 93vw;
@@ -54,19 +62,21 @@
   }
   
   #quiz {
-    background-color: #34495E;
+    border: 2px outset black;
+    background-color: rgba(0,0,0,0.5);
     width: 100%;
     color: #fff;
     text-align: center;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     height: 97vh;
+    margin-top: 1.5vh;
   }
   
   #quiz > h1 {
     text-align: center;
     font-size: 20px;
     font-family: monospace;
-    margin-bottom: 1vh;
+    margin: 2vh;
   }
   
   .questions {
